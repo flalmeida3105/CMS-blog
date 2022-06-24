@@ -1,0 +1,25 @@
+<header>
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gray-400">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <div class="flex items-center" id="mobile-menu-2">
+                <a href="/" class="block p-4 text-white rounded bg-transparent text-blue-700 text-white mx-2"
+                    aria-current="page">Home</a>
+
+                <a href="/dashboard" class="block p-4 text-white rounded bg-transparent text-blue-700 text-white mx-2"
+                    aria-current="page">Dashboard</a>
+                    
+                {{!-- {{#if loggedIn}} --}}
+                <a href="/login" class="block p-4 text-white rounded bg-transparent text-blue-700 text-white mx-2"
+                    aria-current="page">Login</a>
+                {{!-- {{/if}} --}}
+
+                <button id="logout" class="block p-4 text-white rounded bg-transparent text-blue-700 text-white mx-2"
+                    aria-current="page">Logout</button>
+            </div>
+        </div>
+        <div
+            class="px-2 sm:px-4 py-2.5 m-4 max-w-sm rounded bg-gray-100 rounded-lg border border-gray-200 shadow-md flex flex-wrap items-center">
+            The tech blog
+        </div>
+    </nav>
+</header>
