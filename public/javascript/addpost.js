@@ -4,7 +4,7 @@ async function addNewPost(event) {
     const title = document.querySelector('#post-title').value.trim();
     const post_content = document.querySelector('#post-content').value;
 
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch('/api/posts', {
         method: "POST",
         body: JSON.stringify({
             title,
