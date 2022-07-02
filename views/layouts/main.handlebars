@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {{title}} </title>
     <script src="https://cdn.tailwindcss.com"></script>
-    {{!-- <link rel="stylesheet" href="/stylesheets/style.css"> --}}
+    {{!--
+    <link rel="stylesheet" href="/stylesheets/style.css"> --}}
 </head>
 
 <body>
     <div class="wrapper">
-            {{> header }}
-            {{{ body }}}
+        {{> header }}
+        {{{ body }}}
     </div>
     <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/edit-post.js"></script>
     {{/if}}
+    <script src="/javascript/comment-post.js"></script>
+
 </body>
 
 </html>

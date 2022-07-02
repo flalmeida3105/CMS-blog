@@ -9,7 +9,11 @@
         </form> --}}
 
         {{!-- <a href="/dashboard/editpost/{{id}}" class="hover:text-red-500 post-details">{{title}}</a> --}}
-        <button id="update-post-btn-1" onclick="updatePost( '{{title}}', '{{post_content}}', '{{id}}' )">{{title}}</button>
+        {{#if loggedIn}}
+            <button id="update-post-btn" onclick="updatePost( `{{title}}`, `{{post_content}}`, '{{id}}' )">{{title}}</button>
+        {{else}}
+            <button id="comment-post-btn" onclick="commentPost('{{id}}' )">{{title}}</button>
+        {{/if}}
         <p class="text-sm">
             Posted by
             {{user.username}}

@@ -42,25 +42,25 @@ router.get('/addpost', (req, res) => {
 
 })
 
-router.get('/editpost/:id', (req, res) => {
-    Post.findAll({
-        where: {
-            user_id: req.session.user_id,
-        },
-    }).then((dbPostData) => {
-        const posts = dbPostData.map((post) => post.get({ plain: true }));
-        res.render('editpost', {
-            posts,
-            loggedIn: true,
-            navTitle: "Your dashboard"
-        });
-    })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+// router.get('/:id', (req, res) => {
+//     Post.findAll({
+//         where: {
+//             user_id: req.session.user_id,
+//         },
+//     }).then((dbPostData) => {
+//         const posts = dbPostData.map((post) => post.get({ plain: true }));
+//         res.render('editpost', {
+//             posts,
+//             loggedIn: true,
+//             navTitle: "Your dashboard"
+//         });
+//     })
+//         .catch((err) => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
 
-})
+// })
 
 
 
