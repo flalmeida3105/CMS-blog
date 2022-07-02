@@ -21,21 +21,6 @@ router.get("/", (req, res) => {
         });
 });
 
-router.post("/", withAuth, (req, res) => {
-    Post.create({
-        title: req.body.title,
-        post_content: req.body.post_content,
-        user_id: req.session.user_id,
-    })
-        .then((dbPostData) => res.json(dbPostData))
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-
-
 router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -62,6 +47,50 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+
+router.put("/:id", withAuth, (req, res) => {
+    console.log("this is body", req.body);
+    Post.update(
+        {
+            title: req.body.title,
+            post_content: req.body.post_content,
+        },
+        {
+            where: {
+                id: req.params.id,
+            }
+        })
+        .then((dbPostData) => {
+            if (!dbPostData) {
+                res.status(404).json({ message: "No post found for this id." });
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+router.post("/", withAuth, (req, res) => {
+    Post.create({
+        title: req.body.title,
+        post_content: req.body.post_content,
+        user_id: req.session.user_id,
+    })
+        .then((dbPostData) => res.json(dbPostData))
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+
+
 
 
 module.exports = router;

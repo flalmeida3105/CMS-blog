@@ -1,6 +1,15 @@
 <div class="m-10 max-w-full border border-gray-600 ">
     <div class="max-w-full p-4 bg-gray-400 border border-gray-400 shadow-lg text-2xl flex justify-between items-center">
-        <a href="/posts/{{id}}" class="hover:text-red-500">{{title}}</a>
+        {{!-- <a href="/dashboard/editpost/{{id}}" class="hover:text-red-500 post-details">
+            <button id="update-post-btn-1" onclick="updatePost( '{{title}}', '{{post_content}}', '{{id}}' )">{{title}}</button>
+        </a> --}}
+        {{!-- <form action="/dashboard/editpost/{{id}}" method="post">
+            <button id="update-post-btn-1" 
+                onclick="updatePost( '{{title}}', '{{post_content}}', '{{id}}' )">{{title}}</button>
+        </form> --}}
+
+        {{!-- <a href="/dashboard/editpost/{{id}}" class="hover:text-red-500 post-details">{{title}}</a> --}}
+        <button id="update-post-btn-1" onclick="updatePost( '{{title}}', '{{post_content}}', '{{id}}' )">{{title}}</button>
         <p class="text-sm">
             Posted by
             {{user.username}}
