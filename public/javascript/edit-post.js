@@ -1,15 +1,10 @@
-
 function updatePost(title, post_content, id) {
 
     const postTitle = title;
     const postContent = post_content;
     const postId = id;
-
-    // console.log("This is title:", postTitle, "content:", postContent, "id:", postId);
-
     let getDashboardElement = document.querySelector('#dashboard-content');
     let dashboardContent = '';
-
 
     if (postTitle) {
         console.log("title:", postTitle);
@@ -51,15 +46,12 @@ function updatePost(title, post_content, id) {
         document.querySelector('#update-post-title').value = postTitle
         document.querySelector('#update-post-content').value = postContent
     }
-
 }
 
 async function editFormHandler(postId) {
     const title = document.querySelector('#update-post-title').value.trim();
     const post_content = document.querySelector('#update-post-content').value.trim();
     const id = postId
-
-    console.log("id: ", id, "title: ", title, "post_content: ", post_content);
 
     const response = await fetch(`/api/posts/${id}`, {
         method: "PUT",
@@ -73,7 +65,6 @@ async function editFormHandler(postId) {
     });
 
     if (response.ok) {
-        
         document.location.replace("/dashboard/");
     } else {
         alert(response.statusText);
@@ -82,13 +73,10 @@ async function editFormHandler(postId) {
 
 
 async function deleteFormHandler(postId) {
-
     const id = postId
-
     const response = await fetch(`/api/posts/${id}`, {
         method: "DELETE",
     });
-
     if (response.ok) {
         document.location.replace("/dashboard/");
     } else {

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 // const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get("/", (req, res) => {
     Post.findAll({
@@ -34,16 +35,14 @@ router.get("/", (req, res) => {
         });
 });
 
-router.get('/login', (req, res) => {
+// allows the user to login
+router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
-        res.render('dashboard', { 
-            loggedIn: req.session.loggedIn, 
-            navTitle: "Your Dashboard", 
-        });
-        return
+        res.redirect("/");
+        return;
     }
     res.render('login', {
-        navTitle: "The Tech Blog"
+        navTitle: "The Tech Blog",
     });
 });
 
@@ -51,6 +50,26 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+
+// router.get('/comment', (req, res) => {
+//     Post.findAll({
+//         where: {
+//             user_id: req.session.user_id,
+//         },
+//     }).then((dbPostData) => {
+//         const posts = dbPostData.map((post) => post.get({ plain: true }));
+//         res.render('addpost', {
+//             posts,
+//             loggedIn: true,
+//             navTitle: "Your dashboard"
+//         });
+//     })
+//         .catch((err) => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+
+// })
 
 
 module.exports = router;
