@@ -1,0 +1,26 @@
+<header>
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded bg-gray-400">
+        <div class="container flex flex-wrap justify-between items-center ">
+            <div class="flex items-center" id="mobile-menu-2">
+                <a href="/" class="block p-4 text-2xl rounded bg-transparent text-blue-700 mx-2"
+                    aria-current="page">Home</a>
+
+                <a href="/dashboard" class="block p-4 text-2xl rounded bg-transparent text-blue-700 mx-2"
+                    aria-current="page">Dashboard</a>
+
+                {{#if loggedIn}}
+                <button type="button" id="logout"
+                    class="block p-4 text-2xl rounded bg-transparent text-blue-700 mx-2"
+                    aria-current="page">Logout</button>
+                {{else}}
+                <a href="/login" class="block p-4 text-2xl rounded bg-transparent text-blue-700 mx-2"
+                    aria-current="page">Login</a>
+                {{/if}}
+            </div>
+        </div>
+        <div
+            class="px-2 sm:px-4 py-2.5 m-4 max-w-sm text-4xl font-bold rounded bg-gray-100 rounded-lg border border-gray-200 shadow-xl shadow-gray-800 flex flex-wrap items-center">
+            {{navTitle}}
+        </div>
+    </nav>
+</header>
