@@ -40,12 +40,12 @@ The following languages were used to build this project.
 ## Setup
 Please follow the step by step below to implement this project. 
 
-Step1: Clone the CMS-blog repo from https://github.com/flalmeida3105/CMS-blog to your local computer. <br> Step2: Navigate to the application's root folder. <br> Step3: Type npm init -y. <br> Step4: Type npm install. <br>  
+Step1: Clone the CMS-blog repo from https://github.com/flalmeida3105/CMS-blog to your local computer. <br> Step2: Navigate to the application's root folder. <br> Step3: Type npm install. <br> Step4: Create a .env file to the root of the application, and add the required to connect to the database. <br>  
 
 ## Usage
 Please follow the step by step below to use this application. 
 
-Using your preferred browser, open the https://note-taker-fa.herokuapp.com/notes URL to access the Production environment, or run node server.js locally, to initiate a local server instance, then open http://localhost:3001/ for testing and development.  
+Using your preferred browser, open the https://cms-blog-app01.herokuapp.com/ URL to access the Production environment, or run node server.js locally, to initiate a local server instance, then open http://localhost:3001/ for testing and development.  
 
 
 ## Author
