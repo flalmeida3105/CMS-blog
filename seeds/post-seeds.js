@@ -2,47 +2,47 @@ const { Post } = require('../models');
 
 const postData = [
     {
-        title: 'flalmeida1',
+        title: 'Computer Science explained',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '1'
     },
     {
-        title: 'flalmeida2',
+        title: 'Introduction to JavaScript',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '2'
     },
     {
-        title: 'flalmeida3',
+        title: 'Handlebars is a template engine',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '1'
     },
     {
-        title: 'flalmeida4',
+        title: 'JQuery vs JavaScript',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '4'
     },
     {
-        title: 'flalmeida5',
+        title: 'HTML from scratch',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '1'
     },
     {
-        title: 'flalmeida6',
+        title: 'CSS mastering course',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '1'
     },
     {
-        title: 'flalmeida3',
+        title: 'MySQL tutorial',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '3'
     },
     {
-        title: 'flalmeida666',
+        title: 'NodeJs explained',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '2'
     },
     {
-        title: 'flalmeida533',
+        title: 'Introduction to Networking',
         post_content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eum recusandae quam et, illum doloremque dolor ratione consectetur temporibus nostrum?",
         user_id: '3'
     },

@@ -1,5 +1,4 @@
 function updatePost(title, post_content, id) {
-
     const postTitle = title;
     const postContent = post_content;
     const postId = id;
@@ -7,9 +6,7 @@ function updatePost(title, post_content, id) {
     let dashboardContent = '';
 
     if (postTitle) {
-        console.log("title:", postTitle);
-        console.log("content:", postContent);
-        console.log("id:", postId)
+        // generate edit post page
         dashboardContent = `
             <div class="flex justify-center p-10">
                 <div
@@ -32,10 +29,10 @@ function updatePost(title, post_content, id) {
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Content</label>
                         </div>
                         <button type="button" onClick="editFormHandler(${postId})"
-                            class="update-post-btn-1 mt-8 text-black bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update
+                            class="update-post-btn-1 mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update
                             Post</button>
                         <button type="button" onClick="deleteFormHandler(${postId})"
-                            class="delete-post-btn-1 mt-8 text-black bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Delete
+                            class="delete-post-btn-1 mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full  px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Delete
                             Post</button>
                     </form>
                 </div>
@@ -70,7 +67,6 @@ async function editFormHandler(postId) {
         alert(response.statusText);
     }
 }
-
 
 async function deleteFormHandler(postId) {
     const id = postId

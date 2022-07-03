@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-// get all users
+// Get all users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
-
+// Create a new user
 router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
@@ -26,6 +26,7 @@ router.post("/", (req, res) => {
     });
 });
 
+// Validate username and password
 router.post('/login', (req, res) => {
   User.findOne({
     where: {
@@ -54,6 +55,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+// Log user out
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

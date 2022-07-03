@@ -1,8 +1,7 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
-const withAuth = require('../utils/auth');
 
+// Populate the homepage with all posts
 router.get("/", (req, res) => {
     Post.findAll({
         attributes: ["id", "post_content", "title", "created_at"],
@@ -35,7 +34,7 @@ router.get("/", (req, res) => {
         });
 });
 
-// allows the user to login
+// Presents the login page to the user to log in
 router.get("/login", (req, res) => {
     if (req.session.loggedIn) {
         res.redirect("/");
@@ -46,30 +45,9 @@ router.get("/login", (req, res) => {
     });
 });
 
+// Presents the signup page to the user to create a new account
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
-
-
-// router.get('/comment', (req, res) => {
-//     Post.findAll({
-//         where: {
-//             user_id: req.session.user_id,
-//         },
-//     }).then((dbPostData) => {
-//         const posts = dbPostData.map((post) => post.get({ plain: true }));
-//         res.render('addpost', {
-//             posts,
-//             loggedIn: true,
-//             navTitle: "Your dashboard"
-//         });
-//     })
-//         .catch((err) => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-
-// })
-
 
 module.exports = router;
